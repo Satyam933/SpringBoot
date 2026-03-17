@@ -8,8 +8,8 @@
 		<version>4.0.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.satyamCodes</groupId>
-	<artifactId>first</artifactId>
+	<groupId>com.satyam</groupId>
+	<artifactId>app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>
