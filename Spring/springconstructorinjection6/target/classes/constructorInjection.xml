@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="insane" class="com.satyam.Insane">
+      <constructor-arg index="0" value="Sum "/> <!-- Indexing is the bes approach to do constructor injecting. -->
+      <constructor-arg index="1" value="10"/>
+      <constructor-arg index="2" value="20.89"/>        
+
+    <!-- We can do it by specifying type also but what if parameters are of same type.
+    <bean id="insane" class="com.satyam.Insane">
+      <constructor-arg type="String" value="Sum"/>
+      <constructor-arg type="int" value="10"/>
+      <constructor-arg type="float" value="20.89"/>
+    -->
+
+    <!-- We can do it by using name attribute also but we have to do it in sequence and solution for this is to use
+          @ConstructorProperties annotation with variable names inside it to skip sequence.
+    <bean id="insane" class="com.satyam.Insane">     
+      <constructor-arg name="num2" value="30.89"/>
+      <constructor-arg name="num1" value="10"/>
+      <constructor-arg name="sum" value="Sum"/>   
+    -->
+    </bean>
+
+</beans>
