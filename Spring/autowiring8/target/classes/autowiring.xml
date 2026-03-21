@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- byName autowiring
+    <bean id="insane" class="com.satyam.Insane" autowire="byName"></bean>
+    -->
+
+    <!--
+    <bean id="code" class="com.satyam.Earth"></bean> It gives execution for Earth class.
+    -->
+    <!-- byType autowiring-->
+    <bean id="insane" class="com.satyam.Insane" autowire="byType"></bean>
+    <bean id="code1" class="com.satyam.Moon" primary="true"></bean> <!--primary bean so it will executes without giving exception as there is two  beans of same type -->
+    <bean id="code2" class="com.satyam.Earth"></bean> 
+
+</beans>
