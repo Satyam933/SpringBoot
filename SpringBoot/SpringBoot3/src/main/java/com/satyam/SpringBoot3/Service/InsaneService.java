@@ -6,7 +6,7 @@ import com.satyam.SpringBoot3.Model.Insane;
 
 @Service
 public class InsaneService {
-  public void addInsane(Insane obj) {
-    System.out.println(obj.getNum1()+obj.getNum2());
+  public void addInsane(Insane insane) {
+    System.out.println(insane.getNum1()+insane.getNum2());
   }
 }
