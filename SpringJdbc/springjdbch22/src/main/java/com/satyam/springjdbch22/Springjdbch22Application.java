@@ -1,5 +1,7 @@
 package com.satyam.springjdbch22;
 
+import java.util.List;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -18,5 +20,7 @@ public class Springjdbch22Application {
 		s1.setMarks(82);
 		StudentService service = context.getBean(StudentService.class);
 		service.addStudent(s1); //This method is inside service layer.
+		List<Student> students = service.getStudents();//For fetching data after saving.
+		System.out.println(students); 
 	}
 }
