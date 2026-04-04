@@ -11,12 +11,7 @@ import com.satyam.springjdbch22.model.Student;
 
 @Repository
 public class StudentRepo {
-  public void save(Student s1) {
-    //System.out.println("Saved");
-    String sql = "insert into student (rollNum, name, marks) values(?, ?, ?)";
-    jdbc.update(sql, s1.getRollNum(), s1.getName(), s1.getMarks());
-  }
-
+  
   private JdbcTemplate jdbc;
   
   public List<Student> findAll() {
@@ -24,19 +19,19 @@ public class StudentRepo {
     return students;
   }
 
-    /**
-     * @return JdbcTemplate return the jdbc
-     */
-    public JdbcTemplate getJdbc() {
-        return jdbc;
-    }
-
-    /**
-     * @param jdbc the jdbc to set
-     */
+  public JdbcTemplate getJdbc() {
+    return jdbc;
+  }
+    
     @Autowired
     public void setJdbc(JdbcTemplate jdbc) {
-        this.jdbc = jdbc;
+      this.jdbc = jdbc;
     }
-
+    
+    public void save(Student s1) {
+    //System.out.println("Saved");
+    String sql = "insert into student (rollNum, name, marks) values(?, ?, ?)";
+    int rows = jdbc.update(sql, s1.getRollNum(), s1.getName(), s1.getMarks());
+    System.out.println(rows + "Executed !");// 0-->Data not added, 1--> Data added.
+  }    
 }
