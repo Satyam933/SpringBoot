@@ -18,7 +18,7 @@ public class StudentRepo {
   }
   public void save(Student s1) {
     //  System.out.println("Saved !"); let's communicate with database.
-    String sql = "insert into student (rollnum, name, marks) values(?, ?, ?)";//create student in schema in resource folder.
+    String sql = "insert into student (rollnum, name, marks) values(?, ?, ?)";//create student in schema.sql and add data in data.sql in resource folder for H2 database.
     int rows = jdbc.update(sql, s1.getRollNum(), s1.getName(), s1.getMarks());
     System.out.println(rows + " Executed !");
   }
